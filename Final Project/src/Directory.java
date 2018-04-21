@@ -28,7 +28,7 @@ public class Directory {
     return this.major;
   }
 
-  public String getClass() {
+  public String getYear() {
     return this.year;
   }
 

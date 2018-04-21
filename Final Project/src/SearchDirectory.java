@@ -18,10 +18,10 @@ public class SearchDirectory {
     return this.nameDirectory.get(name);
   }
 
-  public ArrayList<Directory> searchClass(String class){
+  public ArrayList<Directory> searchClass(String year){
     ArrayList<Directory> result = new ArrayList<Directory>();
     for(Directory person: directoryList) {
-      if (class.equals(person.getClass())){
+      if (year.equals(person.getYear())){
         result.add(person);
       }
     }

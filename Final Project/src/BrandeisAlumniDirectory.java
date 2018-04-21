@@ -5,6 +5,7 @@ import java.util.*;
 
 public class BrandeisAlumniDirectory{
 	public static void main(String[] args){
+		SearchDirectory contactBook = new SearchDirectory();
 
 		ImageIcon logo = new ImageIcon("../Final Project/Brandeis_Zendesk_Logo_01.png");
 
@@ -270,21 +271,21 @@ public class BrandeisAlumniDirectory{
 			String class1 = classOf.getText();
 			String email1 = email.getText();
 			String phone1 = phone.getText();
-    	String major5 = major2.getSelectedItem().toString();
+    	String major5 = major.getSelectedItem().toString();
 			String placement1 = place.getSelectedItem().toString();
 			Directory person = new Directory(name1, gender1, class1,
 																				email1, phone1, major5,placement1);
-			ContactBook.save(person);
+			contactBook.save(person);
 		}
 		});
 
-		search.addActionListener(){
-			public void actionperformed(ActionEvent e){
-			if(!name.getText().equals("")){
-
-			}
-			}
-		};
+		// search.addActionListener(new ActionListener(){
+		// 	public void actionperformed(ActionEvent e){
+		// 	if(!name.getText().equals("")){
+		//
+		// 	}
+		// 	}
+		// });
 
 	}
 }
