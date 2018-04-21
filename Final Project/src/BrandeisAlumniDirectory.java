@@ -42,7 +42,7 @@ public class BrandeisAlumniDirectory{
 		final JCheckBox male = new JCheckBox("Male");
 		male.setBounds(6, 0, 94, 42);
 		male.setBackground(Color.WHITE);
-		final JCheckBox female = new JCheckBox("Female");
+		final JCheckBox female = new JCheckBox("Female",true);
 		female.setBounds(100, 0, 100, 42);
 		female.setBackground(Color.WHITE);
 		gender.setLayout(null);
@@ -115,28 +115,29 @@ public class BrandeisAlumniDirectory{
 		name2.setBounds(249, 33, 200, 28);
 		name2.setBackground(Color.WHITE);
 		name2.setHorizontalAlignment(SwingConstants.LEFT);
-		
+
 		JLabel classLable2 = new JLabel("Class of:");
 		classLable2.setHorizontalAlignment(SwingConstants.CENTER);
-		classLable2.setBounds(0, 17, 249, 81);
+		classLable2.setBounds(0, 64, 249, 75);
 		classLable2.setBackground(Color.WHITE);
 		final JTextField classOf2 = new JTextField("2010");
 		classOf2.setHorizontalAlignment(SwingConstants.CENTER);
-		classOf2.setBounds(249, 43, 200, 28);
+		classOf2.setBounds(249, 90, 200, 28);
 		classOf.setHorizontalAlignment(SwingConstants.LEFT);
 
 		final JLabel majorLable2 = new JLabel("Major:");
-		majorLable2.setBounds(0, 80, 249, 81);
+		majorLable2.setBounds(0, 112, 249, 81);
 		majorLable2.setHorizontalAlignment(SwingConstants.CENTER);
 		majorLable.setHorizontalAlignment(SwingConstants.CENTER);
 		majorLable.setBounds(0, 212, 250, 42);
 		MajorReader mr2 = new MajorReader("../Final Project/Majors.txt");
 		String[] major3 = mr.toArray();
 		JComboBox major4 = new JComboBox(major3);
-		major4.setBounds(249, 81, 200, 81);
+		major4.setBounds(249, 113, 200, 81);
 		info2.setLayout(null);
 
-
+		info2.add(nameLable2);
+		info2.add(name2);
 		info2.add(classLable2);
 		info2.add(classOf2);
 		info2.add(majorLable2);
@@ -237,7 +238,7 @@ public class BrandeisAlumniDirectory{
 		window.setLocation(100,100);
 		window.setVisible(true);
 
-		male.addItemListener(new ItemListener()) {
+		male.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent e) {
         if(e.getStateChange() == ItemEvent.SELECTED) {
           female.setSelected(false);
@@ -246,7 +247,7 @@ public class BrandeisAlumniDirectory{
         }
       }
     });
-    female.addItemListener(new ItemListener()) {
+    female.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent e) {
         if(e.getStateChange() == ItemEvent.SELECTED) {
             male.setSelected(false);
