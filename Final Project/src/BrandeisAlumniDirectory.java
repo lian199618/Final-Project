@@ -2,6 +2,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
+import java.awt.Dialog.*;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class BrandeisAlumniDirectory{
 	public static void main(String[] args){
@@ -146,6 +149,30 @@ public class BrandeisAlumniDirectory{
 		final JButton search = new JButton("search");
 		search.setBounds(136, 271, 101, 43);
 		info2.add(search);
+		
+		ImageIcon iconFind = new ImageIcon("magnifying_glass.png");
+		ImageIcon iconError = new ImageIcon("red_x.png");
+		search.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){
+				//the name searched exists:
+				if(){
+					String nameResult = "Name: " + ;
+					String genderResult = "Gender: " + ;
+					String classResult = "Class Year: " + ;
+					String emailResult = "Email: " + ;
+					String phoneResult = "Phone: " + ;
+					String majorResult = "Major: " + ;
+					String whereResult = "Where to go after graduation: " + ;
+
+					JOptionPane.showMessageDialog(null, "The search results are the following: \n"+nameResult + "\n" + genderResult + "\n"+ classResult + "\n" + emailResult + "\n" + emailResult + "\n"+phoneResult + "\n"+majorResult+"\n"+whereResult, "Search Result", JOptionPane.INFORMATION_MESSAGE, iconFind);
+				//no result found:
+				}else{
+					JOptionPane.showMessageDialog(null, "No Results Found", "Search Result", JOptionPane.INFORMATION_MESSAGE, iconError);
+
+				}
+			}
+		});
+
 
 
 		final JPanel middle = new JPanel();
@@ -155,6 +182,13 @@ public class BrandeisAlumniDirectory{
 		JButton btnSave = new JButton("Save");
 		btnSave.setBounds(70, 307, 150, 42);
 		info.add(btnSave);
+		
+		ImageIcon iconSave = new ImageIcon("check-green.png");
+		btnSave.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){
+				JOptionPane.showMessageDialog(null, "Information successfully saved!", "Message", JOptionPane.INFORMATION_MESSAGE, iconSave);
+			}
+		});
 
 		JButton btnIfYouWant = new JButton("Next Page");
 		btnIfYouWant.setBounds(250, 308, 150, 42);
