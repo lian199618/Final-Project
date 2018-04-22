@@ -150,6 +150,8 @@ public class InputPage extends JPanel {
                       (String)placement.getSelectedItem());
         }
         //把person这个object存到Final Project下的一个txt文件里
+        PrintStream output = new PrintStream(new File ("result.java"));
+        output.println(person);
       }
     });
 
