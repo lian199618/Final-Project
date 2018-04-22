@@ -8,7 +8,11 @@ public class Directory {
   private String major;
   private String placement;
 
-  public Directory(String name, String gender, String year,
+  public Directory() {
+
+  }
+
+  public  void setAll(String name, String gender, String year,
                    String email, String phone, String major,
                    String placement) {
     this.name = name;
