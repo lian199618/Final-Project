@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.util.*;
 
 public class SearchPage extends JPanel {
-  int count = 0;
   public static void main(String[] args) {
       JFrame window = new JFrame("SearchPage");
       JPanel content = new SearchPage();
@@ -72,15 +71,18 @@ public class SearchPage extends JPanel {
     search.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent e){
         //把之前存的txt文件提取出来，存到一个SearchDirectory的object里
-        try {
-          Scanner input = new Scanner ("result.txt");;
+        readFile("result.txt");
+    });
+  }
+  	public static void readFile(String file) {
+  		try {
+          Scanner input = new Scanner (file);;
         } catch (FileNotFoundException e) {
           e.printStackTrace();
           System.err.println("Wrong Directory!!!>~<!!!");
           return;
         }
         while (input.hasNextLine()) {
-          //Capture the next line
           String line = input.nextLine();
           Scanner nextLine = new Scanner (line);
           String name = nextLine.next();
@@ -93,9 +95,6 @@ public class SearchPage extends JPanel {
           Directory people = new Directory();
           people.setAll(name, gender, year, email, phone, major, placement);
           SearchDirectory.save(person);
-          count++;
       }
-    });
-
-  }
+  	}
 }
