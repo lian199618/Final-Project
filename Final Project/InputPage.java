@@ -47,7 +47,7 @@ public class InputPage extends JPanel {
     classLabel.setHorizontalAlignment(SwingConstants.CENTER);
     classLabel.setBounds(0, 170, 250, 42);
     classLabel.setBackground(Color.WHITE);
-    String[] yearList = new String[22];
+    String[] yearList = new String[32];
     yearList[0] = "  ";
     for(int i=2000; i<=2030; i++){
       yearList[i-1999] = Integer.toString(i);
