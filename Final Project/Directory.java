@@ -15,13 +15,13 @@ public class Directory {
   public  void setAll(String name, String gender, String year,
                    String email, String phone, String major,
                    String placement) {
-    this.name = name;
-    this.gender = gender;
-    this.year = year;
-    this.email = email;
-    this.phone = phone;
-    this.major = major;
-    this.placement = placement;
+    this.name = "Name: "+name;
+    this.gender = "Gender: "+gender;
+    this.year = "Class of: "+year;
+    this.email = "Email: "+email;
+    this.phone = "Phone: "+phone;
+    this.major = "Major: "+major;
+    this.placement = "Placement: "+placement;
   }
 
   public String getName() {
@@ -38,12 +38,12 @@ public class Directory {
 
   public String toString() {
     String contact = "";
-    contact+=this.name+"\n";
-    contact+=this.gender+"\n";
-    contact+=this.year+"\n";
-    contact+=this.email+"\n";
-    contact+=this.phone+"\n";
-    contact+=this.major+"\n";
+    contact+=this.name+"#";
+    contact+=this.gender+"#";
+    contact+=this.year+"#";
+    contact+=this.email+"#";
+    contact+=this.phone+"#";
+    contact+=this.major+"#";
     contact+=this.placement+"\n";
     return contact;
   }

@@ -49,7 +49,7 @@ public class InputPage extends JPanel {
     classLabel.setBackground(Color.WHITE);
     String[] yearList = new String[22];
     yearList[0] = "  ";
-    for(int i=2000; i<=2020; i++){
+    for(int i=2000; i<=2030; i++){
       yearList[i-1999] = Integer.toString(i);
     }
     final JComboBox year = new JComboBox(yearList);
@@ -72,21 +72,21 @@ public class InputPage extends JPanel {
     final JLabel majorLabel = new JLabel("Major:");
     majorLabel.setHorizontalAlignment(SwingConstants.CENTER);
     majorLabel.setBounds(0, 212, 250, 42);
-    MajorReader mr = new MajorReader("../Majors.txt");
+    MajorReader mr = new MajorReader("Majors.txt");
     String[] majorList = mr.toArray();
-    JComboBox major = new JComboBox(majorList);
+    final JComboBox major = new JComboBox(majorList);
     major.setBounds(250, 212, 200, 42);
 
     final JLabel placeLabel = new JLabel("Placement:");
     placeLabel.setHorizontalAlignment(SwingConstants.CENTER);
     placeLabel.setBounds(0, 253, 250, 42);
     String [] placementList = {"  ", "Internship", "Full-time", "Graduate School", "Home", "Have not Decide Yet"};
-    JComboBox placement = new JComboBox(placementList);
+    final JComboBox placement = new JComboBox(placementList);
     placement.setBounds(250, 254, 200, 42);
 
-    JButton save = new JButton("Save");
+    final JButton save = new JButton("Save");
 		save.setBounds(100, 307, 150, 42);
-    JButton clear = new JButton("Clear");
+    final JButton clear = new JButton("Clear");
     clear.setBounds(280, 307, 150, 42);
 
     content.add(nameLabel);
@@ -136,22 +136,32 @@ public class InputPage extends JPanel {
         placement.setSelectedItem("  ");
       }
     });
-
+    final ImageIcon iconSave = new ImageIcon("check-green.png");
+    final ImageIcon iconError = new ImageIcon("red_x.png");
     save.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent e){
         Directory person = new Directory();
-        if (male.isSelected()){
+        if (name.getText().equals("")||year.getSelectedItem().equals("  ")||
+            email.getText().equals("")||phone.getText().equals("")||
+            major.getSelectedItem().equals("  ")||placement.getSelectedItem().equals("  ")) {
+
+              JOptionPane.showMessageDialog(null, "Information is imcomplete!", "Message",
+                                            JOptionPane.INFORMATION_MESSAGE, iconError);
+        } else {
+
+          if (male.isSelected()){
           person.setAll(name.getText(), "Male", (String)year.getSelectedItem(),
                       email.getText(), phone.getText(), (String)major.getSelectedItem(),
                       (String)placement.getSelectedItem());
-        } else {
-          person.setAll(name.getText(), "Female", (String)year.getSelectedItem(),
+          } else {
+            person.setAll(name.getText(), "Female", (String)year.getSelectedItem(),
                       email.getText(), phone.getText(), (String)major.getSelectedItem(),
                       (String)placement.getSelectedItem());
+          }
+          StringSaver ss = new StringSaver("directory.txt",person.toString());
+          JOptionPane.showMessageDialog(null, "Information successfully saved!", "Message",
+                                      JOptionPane.INFORMATION_MESSAGE, iconSave);
         }
-        //把person这个object存到Final Project下的一个txt文件里
-        PrintStream output = new PrintStream(new File ("result.java"));
-        output.println(person);
       }
     });
 

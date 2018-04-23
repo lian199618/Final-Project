@@ -11,10 +11,12 @@ public class BrandeisAlumniDirectory{
 		JPanel content = new JPanel();
 		content.setLayout(new BorderLayout());
 
-		JLabel title = new JLabel("<html><h1>Brandeis Alumni Directory</h1></html>");
-		title.setForeground(new Color(0, 102, 255));
-		title.setBackground(Color.WHITE);
-		title.setHorizontalAlignment(SwingConstants.CENTER);
+		// JLabel title = new JLabel("<html><h1>Brandeis Alumni Directory</h1></html>");
+		// title.setForeground(new Color(0, 102, 255));
+		// title.setBackground(Color.WHITE);
+		// title.setHorizontalAlignment(SwingConstants.CENTER);
+		ImageIcon logo = new ImageIcon("logo.png");
+		JLabel title = new JLabel(logo, JLabel.CENTER);
 		content.add(title, BorderLayout.PAGE_START);
 
 		JPanel inputPage = new InputPage();
@@ -25,9 +27,10 @@ public class BrandeisAlumniDirectory{
 	  content.add(tabbedPane, BorderLayout.CENTER);
 
 		window.setContentPane(content);
-		window.setSize(565,525);
+		window.setSize(550,575);
 		window.setLocation(100,100);
 		window.setVisible(true);
+
 
 	}
 }
