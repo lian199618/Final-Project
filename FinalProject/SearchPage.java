@@ -62,6 +62,10 @@ public class SearchPage extends JPanel {
 		content.add(search);
     content.add(clear);
 
+    final JLabel warning = new JLabel("Please only enter ONE criteria to search!");
+    warning.setBounds(130, 300, 300, 81);    
+    content.add(warning);
+
     clear.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent e){
         name.setText("");
