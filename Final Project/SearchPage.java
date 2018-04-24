@@ -80,7 +80,7 @@ public class SearchPage extends JPanel {
         String result = "";
         if (!name.getText().equals("")&& major.getSelectedItem().equals("  ")
             && year.getSelectedItem().equals("  ")){
-              result = contactBook.searchName("Name: "+name.getText()).toString().replaceAll("#", "\n");
+              result = contactBook.searchName("Name: "+name.getText()).replaceAll("#", "\n");
         } else if (name.getText().equals("")&& !major.getSelectedItem().equals("  ")
             && year.getSelectedItem().equals("  ")){
               result = contactBook.searchMajor("Major: "+(String)major.getSelectedItem()).replaceAll("#", "\n");
