@@ -158,7 +158,7 @@ public class InputPage extends JPanel {
                       email.getText(), phone.getText(), (String)major.getSelectedItem(),
                       (String)placement.getSelectedItem());
           }
-          StringSaver ss = new StringSaver("directory.txt",person.toString());
+          StringSaver ss = new StringSaver("directory.txt",person.saveToFile());
           JOptionPane.showMessageDialog(null, "Information successfully saved!", "Message",
                                       JOptionPane.INFORMATION_MESSAGE, iconSave);
         }

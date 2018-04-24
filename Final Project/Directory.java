@@ -36,6 +36,18 @@ public class Directory {
     return this.year;
   }
 
+  public String saveToFile() {
+    String contact = "";
+    contact+=this.name.substring(6)+"#";
+    contact+=this.gender.substring(8)+"#";
+    contact+=this.year.substring(10)+"#";
+    contact+=this.email.substring(7)+"#";
+    contact+=this.phone.substring(7)+"#";
+    contact+=this.major.substring(7)+"#";
+    contact+=this.placement.substring(11)+"\n";
+    return contact;
+  }
+
   public String toString() {
     String contact = "";
     contact+=this.name+"#";
