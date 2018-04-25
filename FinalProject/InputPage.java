@@ -80,7 +80,7 @@ public class InputPage extends JPanel {
     final JLabel placeLabel = new JLabel("Placement:");
     placeLabel.setHorizontalAlignment(SwingConstants.CENTER);
     placeLabel.setBounds(0, 253, 250, 42);
-    String [] placementList = {"  ", "Internship", "Full-time", "Graduate School", "Home", "Have not Decide Yet"};
+    String [] placementList = {"  ", "Internship", "Full-time", "Graduate School", "Home", "Have not Decided Yet"};
     final JComboBox placement = new JComboBox(placementList);
     placement.setBounds(250, 254, 200, 42);
 
